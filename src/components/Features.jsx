@@ -31,7 +31,7 @@ const Features = () => {
             <div className="col-md-4">
               <div class="card p-3">
                 <div class="card-body text-center">
-                    <i className="fa fa-cogs fa-4x mb-4 text-primary"></i>
+                    <i className="fa fa-address-card-o fa-4x mb-4 text-primary"></i>
                   <h5 class="card-title mb-3 fs-4 fw-bold">Personilazied NFTs</h5>
                   <p class="card-text lead">
                     Some quick example text to build on the card title and make
@@ -43,7 +43,7 @@ const Features = () => {
             <div className="col-md-4">
               <div class="card p-3">
                 <div class="card-body text-center">
-                    <i className="fa fa-cogs fa-4x mb-4 text-primary"></i>
+                    <i className="fa fa-laptop fa-4x mb-4 text-primary"></i>
                   <h5 class="card-title mb-3 fs-4 fw-bold">Awesome UI</h5>
                   <p class="card-text lead">
                     Some quick example text to build on the card title and make
@@ -57,7 +57,7 @@ const Features = () => {
             <div className="col-md-4">
               <div class="card p-3">
                 <div class="card-body text-center">
-                    <i className="fa fa-cogs fa-4x mb-4 text-primary"></i>
+                    <i className="fa fa-clock-o fa-4x mb-4 text-primary"></i>
                   <h5 class="card-title mb-3 fs-4 fw-bold">Fast Voting Process</h5>
                   <p class="card-text lead">
                     Some quick example text to build on the card title and make
@@ -69,7 +69,7 @@ const Features = () => {
             <div className="col-md-4">
               <div class="card p-3 ">
                 <div class="card-body text-center">
-                    <i className="fa fa-cogs fa-4x mb-4 text-primary"></i>
+                    <i className="fa fa-toggle-on fa-4x mb-4 text-primary"></i>
                   <h5 class="card-title mb-3 fs-4 fw-bold">Low-Priced</h5>
                   <p class="card-text lead">
                     Some quick example text to build on the card title and make
@@ -81,7 +81,7 @@ const Features = () => {
             <div className="col-md-4">
               <div class="card p-3">
                 <div class="card-body text-center">
-                    <i className="fa fa-cogs fa-4x mb-4 text-primary"></i>
+                    <i className="fa fa-users fa-4x mb-4 text-primary"></i>
                   <h5 class="card-title mb-3 fs-4 fw-bold">Convenient support</h5>
                   <p class="card-text lead">
                     Some quick example text to build on the card title and make
