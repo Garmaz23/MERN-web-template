@@ -1,30 +1,30 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function Login() {
+export default function Register() {
   return (
     <div>
       <div className="container shadow my-5">
-        <div className="row">
-          <div className="col-md-5 d-flex flex-column align-items-center text-white justify-content-center form">
-            <h1 className="display-4 fw-bolder text-white">Welcome Back</h1>
+        <div className="row justify-content-end">
+          <div className="col-md-5 d-flex flex-column align-items-center text-white justify-content-center form order-2">
+            <h1 className="display-4 fw-bolder text-white">Hello</h1>
             <p className="lead text-center text-white">
-              Enter Your Credentials To Login
+              Enter Your Details To Register
             </p>
             <h5 className="mb-4 text-white">OR</h5>
             <NavLink
-              to="/register"
+              to="/login"
               className="btn btn-outline-light rounded-pill mb-2 pb-2 w-50"
             >
-              Register
+              LOGIN
             </NavLink>
           </div>
           <div className="col-md-6 p-5">
-            <h1 className="display-6 fw-bolder mb-5">LOGIN</h1>
+            <h1 className="display-6 fw-bolder mb-5">REGISTER</h1>
             <form>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">
-                  Email address
+                  Username
                 </label>
                 <input
                   type="email"
@@ -35,6 +35,12 @@ export default function Login() {
                 <div id="emailHelp" class="form-text">
                   We'll never share your email with anyone else.
                 </div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">
+                  Email address
+                </label>
+                <input type="email" class="form-control" id="name" />
               </div>
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">
@@ -53,14 +59,11 @@ export default function Login() {
                   id="exampleCheck1"
                 />
                 <label class="form-check-label" for="exampleCheck1">
-                  Remember me
+                  I agree with Terms and Conditions
                 </label>
               </div>
-              <button
-                type="submit"
-                class="btn btn-primary w-100 mt-4 rounded-pill"
-              >
-                Login
+              <button type="submit" class="btn btn-outline-primary w-100 mt-4 rounded-pill">
+                Register
               </button>
             </form>
           </div>
