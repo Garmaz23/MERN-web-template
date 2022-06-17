@@ -16,7 +16,7 @@ const Contact = () => {
           </div>
           <div className="row">
             <div className="col-md-6">
-              <img src="/assets/contact.jpg" alt="Contact" className="w-75" />
+              <img src="/assets/contact.jpg" alt="Contact" className="w-75 mt-5" />
             </div>
             <div className="col-md-6">
               <form action="">
@@ -52,7 +52,12 @@ const Contact = () => {
                     rows="5"
                   ></textarea>
                 </div>
-                <button type="submit" className="btn btn-outline-primary">Send Message <i className="fa fa-paper-plane ms-2"></i></button>
+                <button
+                  type="submit"
+                  className="btn btn-outline-primary rounded-pill px-4"
+                >
+                  Send Message <i className="fa fa-paper-plane ms-2"></i>
+                </button>
               </form>
             </div>
           </div>
