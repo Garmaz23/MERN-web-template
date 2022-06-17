@@ -7,6 +7,7 @@ import Features from './components/Features';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import {Route, Routes} from 'react-router-dom';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route exact path="/about" element={<About/>}/>
       <Route exact path="/features" element={<Features/>}/>
       <Route exact path="/contact" element={<Contact/>}/>
+      <Route exact path="/login" element={<Login/>}/>
     </Routes>
     <Footer/>
     </>

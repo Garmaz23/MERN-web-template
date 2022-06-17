@@ -12,6 +12,11 @@
   cursor: pointer;
   box-shadow: 0 .5rem 1rem rgb(0,0,0, .15);
 }
+/* Form */
+.form{
+  background: rgb(0,1,168);
+  background: linear-gradient(90deg,rgb(0,1,168) 30%, rgba(10, 99, 172, 0.795) 100%);
+}
 /* Footer */
 .footer{
   background: rgb(0,1,168);
