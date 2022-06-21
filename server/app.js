@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-//run server
+//run server on :3001
 
 app.listen(3001, () => {
   console.log("Server is listening");
