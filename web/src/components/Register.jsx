@@ -1,68 +1,129 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 
-export default function Register() {
+
+
+const Register = () => {
+  const navigate = useNavigate();
+
+  const [user, setUser] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  // Handle inputs
+  const handleInput = (event) => {
+    let name = event.target.name;
+    let value = event.target.value;
+
+    setUser({ ...user, [name]: value });
+  };
+
+  // Handle submit
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    // Store object data into variables
+    const { username, email, password } = user;
+    try {
+      //default 3000 => proxy => 3001
+      const res = await fetch('/register', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          email,
+          password,
+        }),
+      });
+      console.log(res.status);
+      if (res.status === 400 || !res) {
+        window.alert("User with same credentials already exists");
+      } else {
+        window.alert("Registered Successfully");
+        navigate.push('/login');
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <div className="container shadow my-5">
         <div className="row justify-content-end">
           <div className="col-md-5 d-flex flex-column align-items-center text-white justify-content-center form order-2">
-            <h1 className="display-4 fw-bolder text-white">Hello</h1>
-            <p className="lead text-center text-white">
-              Enter Your Details To Register
-            </p>
-            <h5 className="mb-4 text-white">OR</h5>
+            <h1 className="display-4 fw-bolder">Hello</h1>
+            <p className="lead text-center">Enter Your Details to Register</p>
+            <h5 className="mb-4">OR</h5>
             <NavLink
               to="/login"
-              className="btn btn-outline-light rounded-pill mb-2 pb-2 w-50"
+              className="btn btn-outline-light rounded-pill pb-2 w-50"
             >
-              LOGIN
+              Login
             </NavLink>
           </div>
           <div className="col-md-6 p-5">
-            <h1 className="display-6 fw-bolder mb-5">REGISTER</h1>
-            <form>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">
+            <form onSubmit={handleSubmit} method="POST">
+              <div className="mb-3">
+                <label htmlFor="name" className="form-label">
                   Username
                 </label>
                 <input
+                  type="text"
+                  className="form-control"
+                  id="name"
+                  name="username"
+                  value={user.username}
+                  onChange={handleInput}
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="exampleInputEmail1" className="form-label">
+                  Email address
+                </label>
+                <input
                   type="email"
-                  class="form-control"
+                  className="form-control"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
+                  name="email"
+                  value={user.email}
+                  onChange={handleInput}
                 />
-                <div id="emailHelp" class="form-text">
+                <div id="emailHelp" className="form-text">
                   We'll never share your email with anyone else.
                 </div>
               </div>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">
-                  Email address
-                </label>
-                <input type="email" class="form-control" id="name" />
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">
+              <div className="mb-3">
+                <label htmlFor="exampleInputPassword1" className="form-label">
                   Password
                 </label>
                 <input
                   type="password"
-                  class="form-control"
+                  className="form-control"
                   id="exampleInputPassword1"
+                  name="password"
+                  value={user.password}
+                  onChange={handleInput}
                 />
               </div>
-              <div class="mb-3 form-check">
+              <div className="mb-3 form-check">
                 <input
                   type="checkbox"
-                  class="form-check-input"
+                  className="form-check-input"
                   id="exampleCheck1"
                 />
-                <label class="form-check-label" for="exampleCheck1">
-                  I agree with Terms and Conditions
+                <label className="form-check-label" htmlFor="exampleCheck1">
+                  I Agree Terms and Conditions
                 </label>
               </div>
-              <button type="submit" class="btn btn-outline-primary w-100 mt-4 rounded-pill">
+              <button
+                type="submit"
+                className="btn btn-outline-primary w-100 mt-4 rounded-pill"
+              >
                 Register
               </button>
             </form>
@@ -71,4 +132,5 @@ export default function Register() {
       </div>
     </div>
   );
-}
+};
+export default Register;
