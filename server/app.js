@@ -102,14 +102,19 @@ app.post("/message", async (req, res) => {
     //after hash, it till save to db
     const created = await sendMsg.save();
     console.log(created);
-    res.status(200).send("Message sent");
+    res.status(200).send("Message Sent");
   } catch (error) {
     res.status(400).send(error);
   }
 });
 
-//Run server
+//Logout page
+app.get('/logout',(req,res)=>{
+  res.clearCookie("jwt",{path:'/'})
+  res.status(200).send("User Logged Out")
+})
 
+//Run server
 app.listen(port, () => {
   console.log("Server is listening");
 });
