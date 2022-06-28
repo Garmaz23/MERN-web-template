@@ -11,6 +11,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
 import Logout from "./components/Logout";
+import Protectedroute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -21,10 +22,10 @@ function App() {
         <Route exact path="/about" element={<About />} />
         <Route exact path="/features" element={<Features />} />
         <Route exact path="/contact" element={<Contact />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/register" element={<Register />} />
-        <Route exact path="/dashboard" element={<Dashboard />} />
-        <Route exact path="/logout" element={<Logout />} />
+        <Route exact path="/login" element={<Login />} auth={true} />
+        <Route exact path="/register" element={<Register />} auth={true} />
+        <Route exact path="/dashboard" element={<Dashboard />} auth={true} />
+        <Route exact path="/logout" element={<Logout />} auth={true} />
       </Routes>
       <Footer />
     </>
