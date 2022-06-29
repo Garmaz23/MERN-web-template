@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink,  useNavigate } from "react-router-dom";
 
 export default function Login() {
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const [user, setUser] = useState({
     email: "",
@@ -38,7 +38,7 @@ export default function Login() {
       } else {
         window.alert("Login Successfull");
         window.location.reload();
-        history.push("/");
+        navigate.push("/");
         // Token is generated When we Logged In.
         
       }
